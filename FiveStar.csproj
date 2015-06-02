@@ -87,10 +87,24 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Views\LeftMenuViewController.cs" />
     <Compile Include="Views\HomeViewController.cs" />
+    <Compile Include="Views\OrderViewController.cs" />
+    <Compile Include="Views\LaundryViewController.cs" />
+    <Compile Include="Views\MyOrdersViewController.cs" />
+    <Compile Include="Views\MyWalletViewController.cs" />
+    <Compile Include="Views\AboutViewController.cs" />
+    <Compile Include="Views\FeedbackViewController.cs" />
+    <Compile Include="Views\AddressViewController.cs" />
+    <Compile Include="Views\AddressListViewController.cs" />
+    <Compile Include="SourceAndDelegate\AutoScrollDataSource.cs" />
+    <Compile Include="SourceAndDelegate\AutoScrollDelegate.cs" />
+    <Compile Include="Func\Entities.cs" />
+    <Compile Include="Func\DataProvider.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Views\" />
+    <Folder Include="SourceAndDelegate\" />
+    <Folder Include="Func\" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="jasidepanels">
@@ -101,5 +115,11 @@
       <Version>3.0</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\1.jpg" />
+    <BundleResource Include="Resources\2.jpg" />
+    <BundleResource Include="Resources\3.jpg" />
+    <BundleResource Include="Resources\4.jpg" />
   </ItemGroup>
 </Project>
