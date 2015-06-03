@@ -10,6 +10,7 @@ namespace FiveStar
 	public class HomeViewController : UIViewController
 	{
 		CarouselView carousel;
+		UIPageControl pageControl;
 
 		public HomeViewController ()
 		{ 
@@ -34,6 +35,9 @@ namespace FiveStar
 			};
 			carousel.CarouselType = CarouselType.Linear;
 			carousel.ConfigureView();
+
+			pageControl = new UIPageControl (new CGRect (0, carousel.Frame.Height - 20, carousel.Frame.Width, 20));
+			carousel.AddSubview (pageControl);
 
 			View.AddSubview(carousel);
 		}

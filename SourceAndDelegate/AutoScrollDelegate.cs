@@ -40,9 +40,12 @@ namespace FiveStar
 				else
 					carouselView.ScrollToItem (0, true);
 
-				timer.Invalidate ();
-				timer.Dispose ();
-				timer = null;
+				if(timer!=null)
+				{
+					timer.Invalidate ();
+					timer.Dispose ();
+					timer = null;
+				}
 			});
 		}
 	}
