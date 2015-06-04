@@ -23,5 +23,11 @@ namespace FiveStar
 		public List<FuncItem> Items { get; set; }
 		public string Des { get; set; }
 	}
+
+	public class UserInfo
+	{
+		public string UserName { get; set; }
+		public string ImageUri { get; set; }
+	}
 }
 

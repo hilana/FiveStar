@@ -26,6 +26,7 @@ namespace FiveStar
 		public override UIView ViewForItem(CarouselView carousel, nint index, UIView reusingView)
 		{
 			return new UIImageView (carousel.Bounds) {
+				BackgroundColor = UIColor.Black,
 				Image = UIImage.FromBundle (this.items [(int)index].Uri),
 				ContentMode = UIViewContentMode.ScaleToFill
 			};

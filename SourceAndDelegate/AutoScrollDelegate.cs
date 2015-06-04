@@ -8,8 +8,7 @@ namespace FiveStar
 {
 	public class AutoScrollDelegate : CarouselViewDelegate
 	{
-		NSTimer timer;
-		double changedSpan=2;
+		public event EventHandler CurrentItemDidChanged;
 
 		public AutoScrollDelegate()
 		{
@@ -34,19 +33,8 @@ namespace FiveStar
 		{
 			base.CurrentItemIndexDidChange (carouselView);
 
-			timer = NSTimer.CreateRepeatingScheduledTimer (changedSpan, delegate {
-				if ((carouselView.CurrentItemIndex + 1) < carouselView.NumberOfItems)
-					carouselView.ScrollToItem (carouselView.CurrentItemIndex + 1, true);
-				else
-					carouselView.ScrollToItem (0, true);
-
-				if(timer!=null)
-				{
-					timer.Invalidate ();
-					timer.Dispose ();
-					timer = null;
-				}
-			});
+			if (CurrentItemDidChanged != null)
+				CurrentItemDidChanged (carouselView, EventArgs.Empty);
 		}
 	}
 }
