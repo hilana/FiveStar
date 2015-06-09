@@ -31,8 +31,8 @@ namespace FiveStar
 			controller = new JASidePanelController ();
 			controller.ShouldDelegateAutorotateToVisiblePanel = false;
 			controller.CenterPanel = new UINavigationController(new HomeViewController ());
-			controller.LeftPanel = new LeftMenuViewController ();
-			controller.RightPanel = new UIViewController ();
+			controller.LeftPanel = new LeftMenuViewController (controller);
+			controller.RightPanel = new MyOrdersViewController ();
 			window.RootViewController = controller;
 
 			window.MakeKeyAndVisible ();

@@ -20,6 +20,7 @@ namespace FiveStar
 
 		public HomeViewController ()
 		{ 
+			Title = NSBundle.MainBundle.LocalizedString ("五星洗衣", "五星洗衣");
 		}
 
 		public override void DidReceiveMemoryWarning ()

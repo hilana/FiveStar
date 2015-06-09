@@ -10,29 +10,19 @@ namespace FiveStar
 		UIImageView UserImage;
 		UIButton InfoButton;
 
-		public bool IsLogin
-		{
-			set{
-				if (value) {
-					UserImage.Image = UIImage.FromBundle ("");
-					InfoButton.SetTitle ("您尚未登录", UIControlState.Normal);
-				}
-
-				UserImage.Image = UIImage.FromBundle ("");
-				InfoButton.SetTitle ("您尚未登录", UIControlState.Normal);
-			}
-		}
-
 		public UserInfo UserInfo
 		{
 			set{ 
+				if (value == null)
+					return;
+
 				if(!string.IsNullOrEmpty(value.ImageUri))
-					UserImage.Image = UIImage.FromBundle ("");
+					UserImage.Image = UIImage.FromBundle ("DefaultUserImage.png");
 				else
-					UserImage.Image = UIImage.FromBundle ("");
+					UserImage.Image = UIImage.FromBundle ("DefaultUserImage.png");
 
 				if(string.IsNullOrEmpty(value.UserName))
-					InfoButton.SetTitle ("您尚未登录", UIControlState.Normal);
+					InfoButton.SetTitle ("点击验证身份", UIControlState.Normal);
 				else
 					InfoButton.SetTitle (string.Format("{0}",value.UserName), UIControlState.Normal);
 			}
@@ -52,8 +42,8 @@ namespace FiveStar
 			UserImage.Frame = new CGRect (rect.Width / 2 - 50, 50, 100, 100);
 			this.AddSubview (UserImage);
 
-			InfoButton.Frame = new CGRect (0,UserImage.Frame.Bottom+20,rect.Width,30);
-			InfoButton.Font = UIFont.SystemFontOfSize (24);
+			InfoButton.Frame = new CGRect (0, UserImage.Frame.Bottom + 20, rect.Width, 30);
+			InfoButton.Font = UIFont.SystemFontOfSize (18);
 			this.AddSubview (InfoButton);
 		}
 	}
