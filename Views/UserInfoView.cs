@@ -22,7 +22,7 @@ namespace FiveStar
 					UserImage.Image = UIImage.FromBundle ("DefaultUserImage.png");
 
 				if(string.IsNullOrEmpty(value.UserName))
-					InfoButton.SetTitle ("点击验证身份", UIControlState.Normal);
+					InfoButton.SetTitle ("您尚未登录，请前往注册。", UIControlState.Normal);
 				else
 					InfoButton.SetTitle (string.Format("{0}",value.UserName), UIControlState.Normal);
 			}
@@ -42,9 +42,15 @@ namespace FiveStar
 			UserImage.Frame = new CGRect (rect.Width / 2 - 50, 50, 100, 100);
 			this.AddSubview (UserImage);
 
-			InfoButton.Frame = new CGRect (0, UserImage.Frame.Bottom + 20, rect.Width, 30);
+			InfoButton.Frame = new CGRect (0,UserImage.Frame.Bottom+20,rect.Width,30);
 			InfoButton.Font = UIFont.SystemFontOfSize (18);
+			InfoButton.TouchUpInside += ShowUserInfo;
 			this.AddSubview (InfoButton);
+		}
+
+		void ShowUserInfo (object sender, EventArgs e)
+		{
+			
 		}
 	}
 }
