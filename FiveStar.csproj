@@ -102,6 +102,7 @@
     <Compile Include="Views\UserInfoView.cs" />
     <Compile Include="SourceAndDelegate\FuncListDataSource.cs" />
     <Compile Include="SourceAndDelegate\OrdersDataSource.cs" />
+    <Compile Include="SourceAndDelegate\AddressListDataSource.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>

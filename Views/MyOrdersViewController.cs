@@ -33,7 +33,7 @@ namespace FiveStar
 		{
 			this.View.BackgroundColor = UIColor.White;
 
-			RefreshOrders ();
+			//RefreshOrders ();
 
 			segmentedControl = new UISegmentedControl (new object[]{ "未完成", "已完成" });
 			segmentedControl.SelectedSegment = 0;

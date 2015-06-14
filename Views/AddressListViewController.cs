@@ -13,6 +13,8 @@ namespace FiveStar
 
 		List<AddressInfo> addressInfos;
 
+		AddressListDataSource source;
+
 		public AddressListViewController ()
 		{
 			Title = NSBundle.MainBundle.LocalizedString ("常用地址", "常用地址");
@@ -28,10 +30,27 @@ namespace FiveStar
 
 		public override void ViewDidLoad ()
 		{
+			base.ViewDidLoad ();
+
 			this.View.BackgroundColor = UIColor.White;
 
+			var addButton = new UIBarButtonItem (UIBarButtonSystemItem.Add, onAddNewAddress);
+			NavigationItem.RightBarButtonItem = addButton;
+
+			source = new AddressListDataSource ();
+			source.AddressInfoSelected += (object sender, EventArgs e) => {
+				if (sender == null)
+					return;
+
+				this.NavigationController.PushViewController (new AddressViewController (sender as AddressInfo), true);
+			};
+
 			tableView = new UITableView (this.View.Bounds, UITableViewStyle.Grouped);
+			tableView.Source = source;
 			this.View.AddSubview (tableView);
+
+			RefreshAddressInfos ();
+			tableView.ReloadData ();
 		}
 
 		public override void ViewDidLayoutSubviews ()
@@ -59,10 +78,15 @@ namespace FiveStar
 			base.ViewDidDisappear (animated);
 		}
 
-		private void RefreshOrders()
+		void onAddNewAddress (object sender, EventArgs e)
+		{
+			this.NavigationController.PushViewController (new AddressViewController (new AddressInfo()), true);
+		}
+
+		private void RefreshAddressInfos()
 		{
 			var dp = new DataProvider ();
-			this.addressInfos = dp.GetAddressInfos ();
+			source.addressInfos = this.addressInfos = dp.GetAddressInfos ();
 		}
 	}
 }

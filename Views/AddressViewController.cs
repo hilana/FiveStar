@@ -1,13 +1,18 @@
 ﻿using System;
 
 using UIKit;
+using Foundation;
 
 namespace FiveStar
 {
 	public class AddressViewController : UIViewController
 	{
-		public AddressViewController ()
+		AddressInfo addressInfo;
+
+		public AddressViewController (AddressInfo addressInfo)
 		{
+			Title = NSBundle.MainBundle.LocalizedString ("地址详情", "地址详情");
+			this.addressInfo = addressInfo;
 		}
 
 		public override void DidReceiveMemoryWarning ()
@@ -20,7 +25,12 @@ namespace FiveStar
 
 		public override void ViewDidLoad ()
 		{
+			base.ViewDidLoad();
+			
 			this.View.BackgroundColor = UIColor.White;
+
+			var doneButton = new UIBarButtonItem (UIBarButtonSystemItem.Save, onSave);
+			NavigationItem.RightBarButtonItem = doneButton;
 		}
 
 		public override void ViewDidLayoutSubviews ()
@@ -46,6 +56,11 @@ namespace FiveStar
 		public override void ViewDidDisappear (bool animated)
 		{
 			base.ViewDidDisappear (animated);
+		}
+
+		void onSave (object sender, EventArgs e)
+		{
+			this.NavigationController.PopViewController(true);
 		}
 	}
 }
