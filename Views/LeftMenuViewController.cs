@@ -43,7 +43,8 @@ namespace FiveStar
 			source = new FuncListDataSource (dp.GetFuncItemGroups ());
 			source.FuncSelected += Source_FuncSelected;
 
-			tableView = new UITableView (new CGRect (0, userView.Frame.Bottom, userView.Bounds.Width, this.View.Bounds.Height - userView.Bounds.Height), UITableViewStyle.Grouped);
+			tableView = new UITableView (new CGRect (0, userView.Frame.Bottom, userView.Bounds.Width, this.View.Bounds.Height - userView.Bounds.Height), UITableViewStyle.Plain);
+			tableView.SeparatorStyle = UITableViewCellSeparatorStyle.None;
 			tableView.Source = source;
 			this.View.AddSubview (tableView);
 		}

@@ -125,6 +125,17 @@
     <BundleResource Include="Resources\2.jpg" />
     <BundleResource Include="Resources\3.jpg" />
     <BundleResource Include="Resources\4.jpg" />
+    <BundleResource Include="Resources\About_Default.png" />
+    <BundleResource Include="Resources\About_Selected.png" />
+    <BundleResource Include="Resources\Address_Selected.png" />
     <BundleResource Include="Resources\DefaultUserImage.png" />
+    <BundleResource Include="Resources\Feedback_Selected.png" />
+    <BundleResource Include="Resources\Order_Default.png" />
+    <BundleResource Include="Resources\Order_Selected.png" />
+    <BundleResource Include="Resources\Share_Default.png" />
+    <BundleResource Include="Resources\Wallet_Default.png" />
+    <BundleResource Include="Resources\Wallet_Selected.png" />
+    <BundleResource Include="Resources\Address_Default.png" />
+    <BundleResource Include="Resources\Feedback_Default.png" />
   </ItemGroup>
 </Project>

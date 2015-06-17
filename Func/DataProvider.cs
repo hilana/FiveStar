@@ -26,24 +26,24 @@ namespace FiveStar
 					Content = "",
 					Des = "",
 					Items = new List<FuncItem> () {
-						new FuncItem (){ No = 1, Content = "我的订单", Img = "", Des = "" },
-						new FuncItem (){ No = 2, Content = "我的优惠", Img = "", Des = "" }
+						new FuncItem (){ No = 1, Content = "我的订单", DefImg = "Order_Default", SelSImg = "Order_Selected", Des = "" },
+						new FuncItem (){ No = 2, Content = "我的优惠", DefImg = "Wallet_Default", SelSImg = "Wallet_Selected", Des = "" }
 					}
 				},
 				new FuncItemGroup () {
 					Content = "",
 					Des = "",
 					Items = new List<FuncItem> () {
-						new FuncItem (){ No = 3, Content = "常用地址", Img = "", Des = "" },
-						new FuncItem (){ No = 4, Content = "分享朋友", Img = "", Des = "" }
+						new FuncItem (){ No = 3, Content = "常用地址", DefImg = "Address_Default", SelSImg = "Address_Selected", Des = "" },
+						new FuncItem (){ No = 4, Content = "分享朋友", DefImg = "Share_Default", SelSImg = "Share_Default", Des = "" }
 					}
 				},
 				new FuncItemGroup () {
 					Content = "",
 					Des = "",
 					Items = new List<FuncItem> () {
-						new FuncItem (){ No = 5, Content = "意见反馈", Img = "", Des = "" },
-						new FuncItem (){ No = 6, Content = "关于我们", Img = "", Des = "" }
+						new FuncItem (){ No = 5, Content = "意见反馈", DefImg = "Feedback_Default", SelSImg = "Feedback_Selected", Des = "" },
+						new FuncItem (){ No = 6, Content = "关于我们", DefImg = "About_Default", SelSImg = "About_Selected", Des = "" }
 					}
 				}
 			};

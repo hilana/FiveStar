@@ -13,7 +13,8 @@ namespace FiveStar
 	{
 		public nint No { get; set; }
 		public string Content { get; set; }
-		public string Img { get; set; }
+		public string DefImg { get; set; }
+		public string SelSImg { get; set; }
 		public string Des { get; set; }
 	}
 
